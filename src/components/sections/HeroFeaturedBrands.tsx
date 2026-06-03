@@ -5,7 +5,7 @@ import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 import { HERO_FEATURED_BRANDS } from "@/lib/constants";
 
-export function HeroFeaturedAgents() {
+export function HeroFeaturedBrands() {
   return (
     <Reveal
       delay={0.35}

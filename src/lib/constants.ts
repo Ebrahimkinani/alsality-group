@@ -1,6 +1,8 @@
 export const SITE = {
   name: "Alsality Group",
   brandDisplay: "Alsality Group",
+  tagline:
+    "A diversified group building hospitality brands, creative marketing, and memorable dining experiences across Qatar.",
   phone: "+974 0000 0000",
   email: "info@Alsilaty.com",
 };
@@ -39,7 +41,7 @@ export const OFFERINGS = [
     id: "03",
     title: "Brand Growth & Expansion",
     description:
-      "Explore our curated collection of unique vacation homes, offering distinctive architecture and exceptional locations for unforgettable stays.",
+      "We support restaurant brands with market positioning, performance optimization, and scalable expansion strategies built for long-term success.",
     image: "/offers/vacation-homes.jpg",
   },
 ] as const;
@@ -186,75 +188,6 @@ export const HERO_FEATURED_BRANDS = SERVICES.map((brand) => ({
   logo: undefined as string | undefined,
 }));
 
-export const PROPERTIES = [
-  {
-    badge: "For Investment",
-    location: "Bel Air, LA",
-    title: "The One",
-    beds: 6,
-    baths: 4,
-    sqft: "2,780 sq.ft",
-    price: "$690,000",
-    image:
-      "https://framerusercontent.com/images/M8fPoY8PswRWbp36vtYwkWZHkmo.jpg",
-  },
-  {
-    badge: "For Sell",
-    location: "Bel Air, LA",
-    title: "Billionaire Mansion",
-    beds: 5,
-    baths: null,
-    sqft: "3,800 sq.ft",
-    price: "$500,000",
-    image:
-      "https://framerusercontent.com/images/K3lTUnsHMJPPzmVtq4wer4cvpIE.jpg",
-  },
-  {
-    badge: "For Rent",
-    location: "Beverly Hills, CA",
-    title: "The Beverly House",
-    beds: 3,
-    baths: 2,
-    sqft: "1,500 sq.ft",
-    price: "$290,000",
-    image:
-      "https://framerusercontent.com/images/K9p5lGloGmcwXimIajO053M8QA.jpg",
-  },
-  {
-    badge: "For Rent",
-    location: "Beverly Hills, CA",
-    title: "Palazzo di Amore",
-    beds: 4,
-    baths: 2,
-    sqft: "2,100 sq.ft",
-    price: "$490,000",
-    image:
-      "https://framerusercontent.com/images/BVa676Qcx73rJphRua2dXkWNAs.jpg",
-  },
-  {
-    badge: "For Investment",
-    location: "Holmby Hills, LA",
-    title: "The Manor",
-    beds: 7,
-    baths: 5,
-    sqft: "3,100 sq.ft",
-    price: "$482,000",
-    image:
-      "https://framerusercontent.com/images/5htHiNR5LKBqBURUaUm2rZUlLM.jpg",
-  },
-  {
-    badge: "For Sell",
-    location: "Upper East Side, NY",
-    title: "The Penthouse at Central Park Tower",
-    beds: 2,
-    baths: null,
-    sqft: "2,200 sq.ft",
-    price: "$298,000",
-    image:
-      "https://framerusercontent.com/images/5j9m2jqbiSJDp56NHoSIQkB2YaU.jpg",
-  },
-] as const;
-
 export const ABOUT_STATS = [
   { value: "7+", label: "Companies" },
   { value: "20+", label: "Brands & Partners" },
@@ -262,97 +195,8 @@ export const ABOUT_STATS = [
   { value: "12+", label: "Years of Experience" },
 ] as const;
 
-export const AGENTS = [
-  {
-    name: "Sophia Chen",
-    role: "Luxury Specialist",
-    rating: 5,
-    image:
-      "https://framerusercontent.com/images/70vyypRi1KNFqhUIRRXm76uj98.jpg",
-  },
-  {
-    name: "Emily Rodriguez",
-    role: "Investment Advisor",
-    rating: 5,
-    image:
-      "https://framerusercontent.com/images/aIxx1WpEvRciZyt4ZtxxEyc.jpg",
-  },
-  {
-    name: "Isabella Moore",
-    role: "Rental Expert",
-    rating: 5,
-    image:
-      "https://framerusercontent.com/images/n14MFK4DU5H0hb4MTYmtuAZqbE.jpg",
-  },
-  {
-    name: "Olivia Bennett",
-    role: "Senior Agent",
-    rating: 5,
-    image:
-      "https://framerusercontent.com/images/nLFFMJtHilTRgtclZRKdSmfdAsg.jpg",
-  },
-  {
-    name: "Charlotte Hayes",
-    role: "Design Consultant",
-    rating: 5,
-    image:
-      "https://framerusercontent.com/images/IAU2BSodEZAzSqJjl5B2xm2bys.jpg",
-  },
-  {
-    name: "James Wright",
-    role: "Property Analyst",
-    rating: 5,
-    image:
-      "https://framerusercontent.com/images/LJMyvITSYFBGctUUSfHSRfjsZ0.jpg",
-  },
-] as const;
-
-export const FAQS = [
-  {
-    question: "What is the process for buying a property?",
-    answer:
-      "The process involves selecting the right property, negotiating terms with the agent, signing the contract, and completing the payment. Our professional agents will guide you through every step to ensure a smooth experience.",
-  },
-  {
-    question: "How do I determine how much I can afford?",
-    answer:
-      "We recommend consulting with a mortgage specialist who can evaluate your income, expenses, and credit score to provide tailored advice.",
-  },
-  {
-    question: "What documents are required for renting a property?",
-    answer:
-      "Typically, you will need to provide identification, proof of income (e.g., pay stubs or bank statements), and rental history. Some landlords may also require a security deposit.",
-  },
-  {
-    question: "Can I terminate a lease agreement early?",
-    answer:
-      "This depends on the terms of your lease agreement. We recommend reviewing the early termination clauses before signing and discussing options with your landlord or agent.",
-  },
-  {
-    question: "What are the risks of investing in real estate?",
-    answer:
-      "Real estate investment risks may include market fluctuations, maintenance costs, and inconsistent occupancy rates. We offer professional market analysis to help you minimize these risks.",
-  },
-  {
-    question: "How do I choose the right property to invest in?",
-    answer:
-      "Based on your budget, target returns, and the growth potential of the area, we provide tailored property recommendations and detailed analysis reports.",
-  },
-  {
-    question: "Do high-end properties support virtual tours?",
-    answer:
-      "Yes, most of our luxury listings include virtual tour options, allowing you to conveniently explore property details online.",
-  },
-  {
-    question: "How long does the property transfer process take?",
-    answer:
-      "Generally, it takes 30-60 days, depending on local regulations and loan approval timelines. We will assist you throughout the process to ensure everything goes smoothly.",
-  },
-] as const;
-
 export const IMAGES = {
   hero: "/2.jpg",
   about: "/6.jpg",
-  cta: "https://framerusercontent.com/images/eEUcQKK8JFWWIDV51LEEBCOZEw.jpg",
   contact: "/3.jpg",
 } as const;

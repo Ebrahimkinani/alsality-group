@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ArrowButton } from "@/components/ui/ArrowButton";
 import { Reveal } from "@/components/motion/Reveal";
-import { HeroFeaturedAgents } from "@/components/sections/HeroFeaturedAgents";
+import { HeroFeaturedBrands } from "@/components/sections/HeroFeaturedBrands";
 import { HERO_STATS, IMAGES } from "@/lib/constants";
 
 function HeroStats() {
@@ -34,7 +34,7 @@ export function Hero() {
       <div className="hero-shell relative min-h-(--hero-min-h-mobile) overflow-hidden rounded-(--radius-hero) desktop:min-h-(--hero-min-h-desktop) desktop:rounded-(--radius-hero-desktop)">
         <Image
           src={IMAGES.hero}
-          alt="Luxury home exterior at dusk"
+          alt="Alsality Group hospitality and brand development"
           fill
           priority
           className="object-cover object-[center_88%] tablet:object-[center_75%] desktop:object-[center_65%]"
@@ -57,8 +57,8 @@ export function Hero() {
             </Reveal>
 
             <Reveal delay={0.2} className="mt-6 tablet:mt-8">
-              <ArrowButton href="#athar-marketing" variant="light">
-                Explore Properties
+              <ArrowButton href="#why-us" variant="light">
+                Explore Our Brands
               </ArrowButton>
             </Reveal>
           </div>
@@ -66,7 +66,7 @@ export function Hero() {
           <HeroStats />
         </div>
 
-        <HeroFeaturedAgents />
+        <HeroFeaturedBrands />
       </div>
     </section>
   );

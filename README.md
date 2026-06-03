@@ -1,6 +1,6 @@
-# VistaHaven Web
+# Alsality Group
 
-Next.js implementation of the [VistaHaven](https://quaint-slide-063390.framer.app) Framer real estate template.
+Corporate website for Alsality Group — hospitality, restaurant development, brand operations, and Athar Marketing.
 
 ## Stack
 

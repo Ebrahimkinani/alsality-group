@@ -24,7 +24,7 @@ export function WhoWeAre() {
               BUILDING BRANDS. CREATING VALUE. SHAPING EXPERIENCES.
               </h2>
               <p className="mt-2 max-w-[520px] text-sm leading-[1.6] text-body tablet:text-[0.9375rem]">
-              Our Group is a diversified business platform operating across hospitality, marketing, food supply, coffee solutions, and real estate. Through innovation, strategic partnerships, and operational excellence, we develop businesses that deliver exceptional experiences and sustainable growth across Qatar.
+              Our Group is a diversified business platform operating across hospitality, marketing, food supply, and coffee solutions. Through innovation, strategic partnerships, and operational excellence, we develop businesses that deliver exceptional experiences and sustainable growth across Qatar.
 </p>
             </Reveal>
 
@@ -46,7 +46,7 @@ export function WhoWeAre() {
               <div className="relative aspect-2/1 w-full overflow-hidden rounded-2xl">
                 <Image
                   src={IMAGES.about}
-                  alt="VistaHaven professional real estate team"
+                  alt="Alsality Group team"
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 809px) 100vw, (max-width: 1279px) 90vw, 840px"

@@ -10,8 +10,8 @@ const stroke = {
   strokeLinejoin: "round" as const,
 };
 
-/** Price tag with dollar sign */
-export function IconPropertySales({ className }: IconProps) {
+/** Brand mark */
+export function IconBrandDevelopment({ className }: IconProps) {
   return (
     <svg className={cn("h-5 w-5", className)} viewBox="0 0 24 24" aria-hidden>
       <path
@@ -59,7 +59,7 @@ export function IconInvestmentConsulting({ className }: IconProps) {
 }
 
 /** Balance scales */
-export function IconPropertyValuation({ className }: IconProps) {
+export function IconOperations({ className }: IconProps) {
   return (
     <svg className={cn("h-5 w-5", className)} viewBox="0 0 24 24" aria-hidden>
       <path {...stroke} d="M12 4v15M8 19h8" />
@@ -86,10 +86,10 @@ export function IconTailoredSolutions({ className }: IconProps) {
 }
 
 export const SERVICE_ICONS = [
-  IconPropertySales,
+  IconBrandDevelopment,
   IconBuyerRepresentation,
   IconRentalManagement,
   IconInvestmentConsulting,
-  IconPropertyValuation,
+  IconOperations,
   IconTailoredSolutions,
 ] as const;

@@ -1,5 +1,5 @@
 /**
- * VistaHaven design tokens — aligned to Framer template / reference screenshots.
+ * Alsality Group design tokens.
  */
 export const tokens = {
   colors: {

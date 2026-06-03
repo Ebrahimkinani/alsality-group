@@ -16,9 +16,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "VistaHaven - Real Estate",
+  title: "Alsality Group",
   description:
-    "VistaHaven is a modern and sophisticated real estate experience for luxury properties, eco-friendly buildings, and exclusive vacation homes.",
+    "Alsality Group builds and grows hospitality brands across restaurant development, operations, marketing, and food concepts in Qatar.",
 };
 
 export default function RootLayout({

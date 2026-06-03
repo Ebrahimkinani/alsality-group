@@ -15,8 +15,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-white/70">
-              Tailored real estate solutions for luxury living, sustainable
-              investments, and exceptional getaways.
+              {SITE.tagline}
             </p>
           </div>
 
