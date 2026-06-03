@@ -15,10 +15,26 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
+const siteDescription =
+  "Alsality Group builds and grows hospitality brands across restaurant development, operations, marketing, and food concepts in Qatar.";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://alsality-group.vercel.app"),
   title: "Alsality Group",
-  description:
-    "Alsality Group builds and grows hospitality brands across restaurant development, operations, marketing, and food concepts in Qatar.",
+  description: siteDescription,
+  openGraph: {
+    title: "Alsality Group",
+    description: siteDescription,
+    url: "/",
+    siteName: "Alsality Group",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Alsality Group",
+    description: siteDescription,
+  },
 };
 
 export default function RootLayout({
