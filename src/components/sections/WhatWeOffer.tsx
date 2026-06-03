@@ -54,22 +54,32 @@ function OfferImage({
 function VerticalOfferTab({
   id,
   title,
-  onHover,
+  isActive,
+  onSelect,
 }: {
   id: string;
   title: string;
-  onHover: () => void;
+  isActive: boolean;
+  onSelect: () => void;
 }) {
   const verticalTitle = title.toUpperCase();
 
   return (
-    <div
-      role="button"
-      tabIndex={0}
-      onMouseEnter={onHover}
-      onFocus={onHover}
-      className="group flex h-full min-h-[200px] cursor-default flex-col items-center border-l border-border px-3 py-2 transition-colors hover:bg-muted/40 xl:min-h-[240px] xl:px-4"
+    <button
+      type="button"
+      onClick={onSelect}
+      onMouseEnter={() => {
+        if (window.matchMedia("(hover: hover)").matches) onSelect();
+      }}
+      onFocus={onSelect}
+      aria-pressed={isActive}
       aria-label={`View ${title}`}
+      className={cn(
+        "group flex h-full min-h-[200px] cursor-pointer appearance-none flex-col items-center border-l border-border bg-transparent px-3 py-2 text-left transition-colors xl:min-h-[240px] xl:px-4",
+        isActive
+          ? "bg-muted/50 text-foreground"
+          : "text-nav-inactive hover:bg-muted/40 hover:text-body",
+      )}
     >
       <svg
         viewBox="0 0 12 12"
@@ -96,7 +106,7 @@ function VerticalOfferTab({
           {verticalTitle}
         </span>
       </span>
-    </div>
+    </button>
   );
 }
 
@@ -104,9 +114,6 @@ function DesktopOfferLayout() {
   const [active, setActive] = useState(0);
   const offering = OFFERINGS[active];
   const Icon = OFFER_ICONS[active];
-  const inactive = OFFERINGS.map((item, index) => ({ item, index })).filter(
-    ({ index }) => index !== active,
-  );
 
   return (
     <div className="hidden desktop:block">
@@ -138,8 +145,9 @@ function DesktopOfferLayout() {
                   key={offering.id + "-image"}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
+                  exit={{ opacity: 0, pointerEvents: "none" }}
                   transition={{ duration: 0.4 }}
+                  className="relative"
                 >
                   <OfferImage
                     src={offering.image}
@@ -152,13 +160,14 @@ function DesktopOfferLayout() {
             </div>
           </div>
 
-          <div className="flex shrink-0 self-stretch">
-            {inactive.map(({ item, index }) => (
+          <div className="relative z-10 flex shrink-0 self-stretch">
+            {OFFERINGS.map((item, index) => (
               <VerticalOfferTab
                 key={item.id}
                 id={item.id}
                 title={item.title}
-                onHover={() => setActive(index)}
+                isActive={index === active}
+                onSelect={() => setActive(index)}
               />
             ))}
           </div>
@@ -168,9 +177,88 @@ function DesktopOfferLayout() {
   );
 }
 
+function OfferTabPill({
+  id,
+  title,
+  isActive,
+  onSelect,
+}: {
+  id: string;
+  title: string;
+  isActive: boolean;
+  onSelect: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onSelect}
+      aria-pressed={isActive}
+      className={cn(
+        "rounded-full border px-4 py-2 text-xs font-medium uppercase tracking-[0.12em] transition-colors",
+        isActive
+          ? "border-foreground bg-foreground text-background"
+          : "border-border bg-background text-body hover:border-foreground/30",
+      )}
+    >
+      <span className="mr-2 opacity-70">{id}</span>
+      {title}
+    </button>
+  );
+}
+
+function TabletOfferLayout() {
+  const [active, setActive] = useState(0);
+  const offering = OFFERINGS[active];
+  const Icon = OFFER_ICONS[active];
+
+  return (
+    <div className="hidden flex-col gap-6 tablet:flex desktop:hidden">
+      <div className="flex flex-wrap gap-2">
+        {OFFERINGS.map((item, index) => (
+          <OfferTabPill
+            key={item.id}
+            id={item.id}
+            title={item.title}
+            isActive={index === active}
+            onSelect={() => setActive(index)}
+          />
+        ))}
+      </div>
+
+      <AnimatePresence mode="wait">
+        <motion.article
+          key={offering.id}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8, pointerEvents: "none" }}
+          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col"
+        >
+          <OfferImage
+            src={offering.image}
+            alt={offering.title}
+            number={offering.id}
+            label={offering.title}
+            priority={active === 0}
+          />
+          <div className="mt-4 flex items-center gap-2.5">
+            <Icon className="h-4 w-4 text-foreground" />
+            <h3 className="text-base font-semibold text-foreground">
+              {offering.title}
+            </h3>
+          </div>
+          <p className="mt-2 text-sm leading-[1.6] text-body">
+            {offering.description}
+          </p>
+        </motion.article>
+      </AnimatePresence>
+    </div>
+  );
+}
+
 function MobileOfferStack() {
   return (
-    <div className="flex flex-col gap-(--section-offer-gap) desktop:hidden">
+    <div className="flex flex-col gap-(--section-offer-gap) tablet:hidden">
       {OFFERINGS.map((offering, index) => {
         const Icon = OFFER_ICONS[index];
         return (
@@ -215,6 +303,7 @@ export function WhatWeOffer() {
         </Reveal>
 
         <DesktopOfferLayout />
+        <TabletOfferLayout />
         <MobileOfferStack />
       </div>
     </section>
