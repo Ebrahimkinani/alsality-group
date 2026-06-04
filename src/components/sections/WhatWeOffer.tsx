@@ -295,10 +295,10 @@ export function WhatWeOffer() {
         <Reveal className="mb-6 max-w-3xl desktop:mb-8">
           <SectionBadge>FullPlate</SectionBadge>
           <h2 className="mt-3 text-[clamp(1.25rem,3.5vw,2rem)] font-bold uppercase leading-[1.15] tracking-(--tracking-section-title) text-foreground">
-          RESTAURANT DEVELOPMENT & HOSPITALITY MANAGEMENT
+          DEVELOPING EXCEPTIONAL FOOD & BEVERAGE BRANDS
           </h2>
           <p className="mt-2 max-w-[640px] text-sm leading-[1.6] text-body tablet:text-[0.9375rem]">
-          From concept creation to daily operations, Full Plate specializes in building, managing, and growing exceptional restaurant brands that deliver memorable dining <br /> experiences and sustainable business success.
+          Full Plate is a Qatar-based restaurant management and hospitality company specializing in the development, operation, and growth of food and beverage brands. The company provides end-to-end solutions, including 
           </p>
         </Reveal>
 

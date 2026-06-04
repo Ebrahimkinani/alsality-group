@@ -25,23 +25,23 @@ export const HERO_STATS = [
 export const OFFERINGS = [
   {
     id: "01",
-    title: "Restaurant Development",
+    title: "Concept Development",
     description:
-      "We transform ideas into successful hospitality concepts through strategic planning, brand development, menu engineering, interior experience consultation, and operational design.",
+      "Creating distinctive food and beverage concepts that combine market insight, customer experience, and operational strategy to build brands with long-term potential.",
     image: "/offers/luxury-residences.jpg",
   },
   {
     id: "02",
-    title: "Restaurant Operationss",
+    title: "Operational Management",
     description:
-      "We provide comprehensive operational management, ensuring consistency, efficiency, quality control, staff development, and exceptional customer experiences across every location.",
+      "Delivering efficient day-to-day restaurant operations through quality control, team management, performance optimization, and service excellence.",
     image: "/offers/eco-green.jpg",
   },
   {
     id: "03",
-    title: "Brand Growth & Expansion",
+    title: "Brand Positioning",
     description:
-      "We support restaurant brands with market positioning, performance optimization, and scalable expansion strategies built for long-term success.",
+      "Building strong and memorable brand identities that connect with customers, strengthen market presence, and support sustainable business growth.",
     image: "/offers/vacation-homes.jpg",
   },
 ] as const;
@@ -52,6 +52,19 @@ export const BRANDS_SECTION = {
   closing:
     "",
 } as const;
+
+export type PartnerLogo = {
+  id: string;
+  description: string;
+  image: string;
+  className?: string;
+};
+
+/**
+ * Logo images for the marquee below Our Brands.
+ * When empty, brand names from SERVICES are shown as placeholders until you add entries here.
+ */
+export const PARTNER_LOGOS: PartnerLogo[] = [];
 
 export const ATHAR_MARKETING = {
   badge: "Athar Marketing",

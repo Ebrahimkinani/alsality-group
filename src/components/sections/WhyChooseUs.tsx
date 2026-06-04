@@ -1,4 +1,5 @@
 import { Integrations } from "@/components/integrations";
+import { LogosSlider } from "@/components/sections/LogosSlider";
 import { Reveal } from "@/components/motion/Reveal";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { BRANDS_SECTION } from "@/lib/constants";
@@ -20,6 +21,10 @@ export function WhyChooseUs() {
         <div className="mt-6 tablet:mt-8 desktop:mt-(--section-why-header-gap)">
           <Integrations />
         </div>
+
+        <Reveal delay={0.04} className="mt-8 tablet:mt-10">
+          <LogosSlider />
+        </Reveal>
 
         <Reveal delay={0.08}>
           <p className="mx-auto mt-6 max-w-3xl text-center text-sm leading-[1.65] text-body tablet:mt-8 tablet:text-[0.9375rem]">

@@ -21,7 +21,7 @@ export function WhoWeAre() {
             <Reveal>
               <SectionBadge>Who We Are</SectionBadge>
               <h2 className="mt-3 text-[clamp(1.25rem,3.5vw,1.75rem)] font-bold uppercase leading-[1.15] tracking-(--tracking-section-title) text-foreground">
-              BUILDING BRANDS. CREATING VALUE. SHAPING EXPERIENCES.
+              SHAPING THE FUTURE OF PREMIUM BRANDS
               </h2>
               <p className="mt-2 max-w-[520px] text-sm leading-[1.6] text-body tablet:text-[0.9375rem]">
               Our Group is a diversified business platform operating across hospitality, marketing, food supply, and coffee solutions. Through innovation, strategic partnerships, and operational excellence, we develop businesses that deliver exceptional experiences and sustainable growth across Qatar.

@@ -46,7 +46,9 @@ export function Hero() {
           <div className="flex flex-col">
             <Reveal>
               <h1 className="max-w-[min(100%,20rem)] text-(length:--text-hero-mobile) font-semibold uppercase leading-[1.05] tracking-(--tracking-hero) text-background tablet:max-w-xl tablet:text-(length:--text-hero-tablet) desktop:max-w-2xl desktop:text-(length:--text-hero-desktop)">
-              BUILDING BRANDS THAT INSPIRE GROWTH
+              DRIVING QATAR&apos;S <br />
+              <span className="whitespace-nowrap">MOST DISTINCTIVE</span> <br />
+              BRANDS
               </h1>
             </Reveal>
 
