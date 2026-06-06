@@ -22,7 +22,7 @@ export function WhyChooseUs() {
           <Integrations />
         </div>
 
-        <Reveal delay={0.04} className="mt-8 tablet:mt-10">
+        <Reveal delay={0.04} className="mt-20 tablet:mt-24 desktop:mt-32">
           <LogosSlider />
         </Reveal>
 

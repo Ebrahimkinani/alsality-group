@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Reveal } from "@/components/motion/Reveal";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
@@ -26,9 +27,21 @@ export function HeroFeaturedBrands() {
               className="flex size-10 shrink-0 items-center justify-center"
               title={brand.label}
             >
-              <span className="flex size-10 items-center justify-center rounded-full bg-muted text-[0.625rem] font-semibold tracking-tight text-foreground ring-2 ring-background">
-                {brand.monogram}
-              </span>
+              {brand.logo ? (
+                <span className="flex size-10 items-center justify-center overflow-hidden rounded-full bg-muted p-1.5 ring-2 ring-background">
+                  <Image
+                    src={brand.logo}
+                    alt={`${brand.label} logo`}
+                    width={40}
+                    height={40}
+                    className="h-full w-full object-contain"
+                  />
+                </span>
+              ) : (
+                <span className="flex size-10 items-center justify-center rounded-full bg-muted text-[0.625rem] font-semibold tracking-tight text-foreground ring-2 ring-background">
+                  {brand.monogram}
+                </span>
+              )}
             </div>
           ))}
         </InfiniteSlider>

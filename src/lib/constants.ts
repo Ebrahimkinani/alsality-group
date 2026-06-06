@@ -26,13 +26,15 @@ export const OFFERINGS = [
   {
     id: "01",
     title: "Concept Development",
+    icon: "/concept.png",
     description:
       "Creating distinctive food and beverage concepts that combine market insight, customer experience, and operational strategy to build brands with long-term potential.",
-    image: "/offers/luxury-residences.jpg",
+    image: "/7.png",
   },
   {
     id: "02",
     title: "Operational Management",
+    icon: "/operation.png",
     description:
       "Delivering efficient day-to-day restaurant operations through quality control, team management, performance optimization, and service excellence.",
     image: "/offers/eco-green.jpg",
@@ -40,6 +42,7 @@ export const OFFERINGS = [
   {
     id: "03",
     title: "Brand Positioning",
+    icon: "/positioning.png",
     description:
       "Building strong and memorable brand identities that connect with customers, strengthen market presence, and support sustainable business growth.",
     image: "/offers/vacation-homes.jpg",
@@ -60,17 +63,52 @@ export type PartnerLogo = {
   className?: string;
 };
 
+/** Encode public asset paths that may contain spaces (e.g. collection folder names). */
+function publicAsset(...segments: string[]) {
+  return `/${segments.map(encodeURIComponent).join("/")}`;
+}
+
 /**
- * Logo images for the marquee below Our Brands.
- * When empty, brand names from SERVICES are shown as placeholders until you add entries here.
+ * Logo images for the marquee below Our Brands (Full Plate collection).
  */
-export const PARTNER_LOGOS: PartnerLogo[] = [];
+export const PARTNER_LOGOS: PartnerLogo[] = [
+  {
+    id: "duo",
+    description: "Duo",
+    image: publicAsset("Fullplate collection", "Duo.png"),
+    className: "h-11 w-auto max-w-[180px] object-contain tablet:h-12",
+  },
+  {
+    id: "humpo",
+    description: "Humpo",
+    image: publicAsset("Fullplate collection", "humpo.png"),
+    className: "h-11 w-auto max-w-[180px] object-contain tablet:h-12",
+  },
+  { id: "brorito", description: "Brorito", image: publicAsset("Fullplate collection", "Brorito.png") },
+  { id: "fullplate", description: "Full Plate", image: publicAsset("Fullplate collection", "fullplate.png") },
+  { id: "eatfit", description: "EatFit", image: publicAsset("Fullplate collection", "eatfit.png") },
+  {
+    id: "bruno",
+    description: "Bruno",
+    image: publicAsset("Fullplate collection", "Bruno.png"),
+    className: "h-11 w-auto max-w-[180px] object-contain tablet:h-12",
+  },
+  { id: "esora", description: "Esora", image: publicAsset("Fullplate collection", "esora.png") },
+  { id: "munch", description: "Munch", image: publicAsset("Fullplate collection", "munch.png") },
+  { id: "jahnnys", description: "Jonnys", image: publicAsset("Fullplate collection", "jahnnys.png") },
+  {
+    id: "athr",
+    description: "Athr",
+    image: publicAsset("Fullplate collection", "athr.png"),
+    className: "h-11 w-auto max-w-[180px] object-contain tablet:h-12",
+  },
+];
 
 export const ATHAR_MARKETING = {
-  badge: "Athar Marketing",
+  badge: "Athr Marketing",
   heading: "CREATING BRANDS THAT CONNECT, INSPIRE & GROW",
   description:
-    "Athar Marketing is a creative agency specializing in branding, content production, photography, videography, and digital marketing. We help businesses build meaningful connections with their audiences through compelling storytelling, innovative campaigns, and high-quality visual content.",
+    "Athr Marketing is a creative agency specializing in branding, content production, photography, videography, and digital marketing. We help businesses build meaningful connections with their audiences through compelling storytelling, innovative campaigns, and high-quality visual content.",
   showcase: [
     {
       category: "Commercial Production",
@@ -118,6 +156,7 @@ export const ATHAR_MARKETING = {
 export const SERVICES = [
   {
     title: "WOOP",
+    logo: publicAsset("Abduallah collection", "woop.png"),
     shortDescription:
       "A dynamic food concept offering convenient, flavorful meals crafted for customers seeking quality, speed,  ",
     details:
@@ -125,59 +164,43 @@ export const SERVICES = [
   },
   {
     title: "BENNY BUN",
+    logo: publicAsset("Abduallah collection", "benny bun.png"),
     shortDescription:
       "A contemporary takeaway brand known for its fresh ingredients, signature creations, ",
     details:
       "and accessible menu designed for customers on the go.",
   },
   {
-    title: "JONNYS",
-    shortDescription:
-      "A casual food concept focused on delivering satisfying meals, friendly service, ",
-    details:
-      "and a welcoming experience that customers can enjoy anytime.",
-  },
-  {
-    title: "EATFIT",
-    shortDescription:
-      "A healthy food brand dedicated to nutritious, balanced meals made with carefully selected ingredients. ",
-    details:
-      "EatFit helps customers maintain an active lifestyle without compromising on flavor, convenience, or quality.",
-  },
-  {
-    title: "BLURRs",
+    title: "BLUANA",
+    logo: publicAsset("Abduallah collection", "bluana.png"),
     shortDescription:
       "A modern café experience centered around specialty coffee, premium beverages, and a contemporary atmosphere. ",
     details:
-      "Blurr Cafe brings together quality craftsmanship, carefully sourced ingredients.",
+      "Bluana brings together quality craftsmanship and carefully sourced ingredients.",
   },
   {
-    title: "CRUST",
+    title: "TENDIES",
+    logo: publicAsset("Abduallah collection", "tendies.png"),
     shortDescription:
-      "An artisan bakery and pizza concept built on handcrafted dough, bold flavors, ",
+      "A bold comfort-food concept built around crispy chicken tenders, signature sauces, ",
     details:
-      "and a warm, neighborhood atmosphere that keeps guests coming back.",
+      "and craveable flavors designed for everyday indulgence.",
   },
   {
-    title: "FORNO",
+    title: "WINGS",
+    logo: publicAsset("Abduallah collection", "wings.png"),
     shortDescription:
-      "A wood-fired Italian dining concept celebrating authentic recipes, premium ingredients, ",
+      "A wings-focused brand delivering bold flavors, premium ingredients, ",
     details:
-      "and the timeless craft of open-flame cooking in a refined setting.",
+      "and a fun dining experience built for sharing and satisfaction.",
   },
   {
-    title: "SALT HOUSE",
+    title: "ATHR",
+    logo: publicAsset("Abduallah collection", "athr.png"),
     shortDescription:
-      "A coastal-inspired restaurant brand offering fresh seafood, seasonal produce, ",
+      "A creative-led brand experience bringing storytelling, visual identity, and bold campaigns ",
     details:
-      "and relaxed elegance for memorable dining experiences by the water.",
-  },
-  {
-    title: "MAYAM",
-    shortDescription:
-      "A vibrant Middle Eastern kitchen bringing bold spices, shared plates, ",
-    details:
-      "and contemporary hospitality to every table it serves.",
+      "that help partners connect with audiences and grow their market presence.",
   },
 ] as const;
 
@@ -197,8 +220,7 @@ export const HERO_FEATURED_BRANDS = SERVICES.map((brand) => ({
   id: brand.title,
   label: brand.title,
   monogram: brandMonogram(brand.title),
-  /** Optional path under public/ e.g. /brands/woop.svg */
-  logo: undefined as string | undefined,
+  logo: brand.logo,
 }));
 
 export const ABOUT_STATS = [

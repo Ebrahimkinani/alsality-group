@@ -5,10 +5,29 @@ import Image from "next/image";
 import { useState } from "react";
 import { Reveal } from "@/components/motion/Reveal";
 import { ImageCutoutLabel } from "@/components/ui/ImageCutoutLabel";
-import { OFFER_ICONS } from "@/components/ui/OfferIcons";
 import { SectionBadge } from "@/components/ui/SectionBadge";
 import { OFFERINGS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+
+function OfferIcon({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={44}
+      height={44}
+      className={cn("shrink-0 object-contain", className)}
+    />
+  );
+}
 
 function OfferImage({
   src,
@@ -113,7 +132,6 @@ function VerticalOfferTab({
 function DesktopOfferLayout() {
   const [active, setActive] = useState(0);
   const offering = OFFERINGS[active];
-  const Icon = OFFER_ICONS[active];
 
   return (
     <div className="hidden desktop:block">
@@ -127,7 +145,11 @@ function DesktopOfferLayout() {
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col"
           >
-            <Icon className="h-11 w-11 shrink-0 text-foreground" />
+            <OfferIcon
+              src={offering.icon}
+              alt={`${offering.title} icon`}
+              className="h-11 w-11"
+            />
             <h3 className="mt-3 text-lg font-semibold text-foreground">
               {offering.title}
             </h3>
@@ -209,7 +231,6 @@ function OfferTabPill({
 function TabletOfferLayout() {
   const [active, setActive] = useState(0);
   const offering = OFFERINGS[active];
-  const Icon = OFFER_ICONS[active];
 
   return (
     <div className="hidden flex-col gap-6 tablet:flex desktop:hidden">
@@ -242,7 +263,11 @@ function TabletOfferLayout() {
             priority={active === 0}
           />
           <div className="mt-4 flex items-center gap-2.5">
-            <Icon className="h-4 w-4 text-foreground" />
+            <OfferIcon
+              src={offering.icon}
+              alt={`${offering.title} icon`}
+              className="h-5 w-5"
+            />
             <h3 className="text-base font-semibold text-foreground">
               {offering.title}
             </h3>
@@ -259,9 +284,7 @@ function TabletOfferLayout() {
 function MobileOfferStack() {
   return (
     <div className="flex flex-col gap-(--section-offer-gap) tablet:hidden">
-      {OFFERINGS.map((offering, index) => {
-        const Icon = OFFER_ICONS[index];
-        return (
+      {OFFERINGS.map((offering, index) => (
           <Reveal key={offering.id} delay={index * 0.06}>
             <article className="flex flex-col">
               <OfferImage
@@ -272,7 +295,11 @@ function MobileOfferStack() {
                 priority={index === 0}
               />
               <div className="mt-4 flex items-center gap-2.5">
-                <Icon className="h-4 w-4 text-foreground" />
+                <OfferIcon
+                  src={offering.icon}
+                  alt={`${offering.title} icon`}
+                  className="h-5 w-5"
+                />
                 <h3 className="text-base font-semibold text-foreground">
                   {offering.title}
                 </h3>
@@ -282,8 +309,7 @@ function MobileOfferStack() {
               </p>
             </article>
           </Reveal>
-        );
-      })}
+      ))}
     </div>
   );
 }
