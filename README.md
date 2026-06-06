@@ -1,6 +1,6 @@
-# Alsality Group
+# Alsulaiti Group
 
-Corporate website for Alsality Group — hospitality, restaurant development, brand operations, and Athar Marketing.
+Corporate website for Alsulaiti Group — hospitality, restaurant development, brand operations, and Athar Marketing.
 
 ## Stack
 

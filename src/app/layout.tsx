@@ -16,23 +16,23 @@ const inter = Inter({
 });
 
 const siteDescription =
-  "Alsality Group builds and grows hospitality brands across restaurant development, operations, marketing, and food concepts in Qatar.";
+  "Alsulaiti Group builds and grows hospitality brands across restaurant development, operations, marketing, and food concepts in Qatar.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://alsality-group.vercel.app"),
-  title: "Alsality Group",
+  metadataBase: new URL("https://alsulaiti-group.vercel.app"),
+  title: "Alsulaiti Group",
   description: siteDescription,
   openGraph: {
-    title: "Alsality Group",
+    title: "Alsulaiti Group",
     description: siteDescription,
     url: "/",
-    siteName: "Alsality Group",
+    siteName: "Alsulaiti Group",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alsality Group",
+    title: "Alsulaiti Group",
     description: siteDescription,
   },
 };

@@ -1,10 +1,10 @@
 export const SITE = {
-  name: "Alsality Group",
-  brandDisplay: "Alsality Group",
+  name: "Alsulaiti Group",
+  brandDisplay: "Alsulaiti Group",
   tagline:
     "A diversified group building hospitality brands, creative marketing, and memorable dining experiences across Qatar.",
   phone: "+974 0000 0000",
-  email: "info@Alsilaty.com",
+  email: "info@Alsulaiti.com",
 };
 
 export const NAV_LINKS = [
